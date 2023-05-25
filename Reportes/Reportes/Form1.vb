@@ -1,7 +1,5 @@
-﻿Imports System.Data.SqlClient
-Imports Microsoft.Reporting.WinForms
-
-
+﻿Imports Microsoft.Reporting.WinForms
+Imports System.Data.SqlClient
 
 Public Class Form1
 
