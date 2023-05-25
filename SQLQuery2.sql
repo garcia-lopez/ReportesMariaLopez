@@ -1,4 +1,7 @@
 /*Data for the table regions */
+USE BdHR
+GO
+
 
 SET IDENTITY_INSERT regions ON;
   

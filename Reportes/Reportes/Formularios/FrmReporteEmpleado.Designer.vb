@@ -23,45 +23,36 @@ Partial Class FrmReporteEmpleado
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnMostrar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtDato = New System.Windows.Forms.TextBox()
         Me.CmbCampo = New System.Windows.Forms.ComboBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DgvRegistros = New System.Windows.Forms.DataGridView()
         Me.DtpFecha1 = New System.Windows.Forms.DateTimePicker()
+        Me.TxtRango2 = New System.Windows.Forms.TextBox()
         Me.DtpFecha2 = New System.Windows.Forms.DateTimePicker()
         Me.TxtRango1 = New System.Windows.Forms.TextBox()
-        Me.TxtRango2 = New System.Windows.Forms.TextBox()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvRegistros, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.BtnMostrar)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.TxtDato)
         Me.GroupBox1.Controls.Add(Me.CmbCampo)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 39)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(776, 78)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione por que campo desea buscar"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Controls.Add(Me.DtpFecha1)
-        Me.GroupBox2.Controls.Add(Me.TxtRango2)
-        Me.GroupBox2.Controls.Add(Me.DtpFecha2)
-        Me.GroupBox2.Controls.Add(Me.TxtRango1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 96)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(776, 342)
-        Me.GroupBox2.TabIndex = 4
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Registros Encontrados"
         '
         'BtnMostrar
         '
@@ -72,12 +63,12 @@ Partial Class FrmReporteEmpleado
         Me.BtnMostrar.Text = "Mostrar"
         Me.BtnMostrar.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TxtDato
         '
-        Me.TextBox1.Location = New System.Drawing.Point(264, 35)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(425, 22)
-        Me.TextBox1.TabIndex = 3
+        Me.TxtDato.Location = New System.Drawing.Point(264, 35)
+        Me.TxtDato.Name = "TxtDato"
+        Me.TxtDato.Size = New System.Drawing.Size(425, 22)
+        Me.TxtDato.TabIndex = 3
         '
         'CmbCampo
         '
@@ -88,15 +79,33 @@ Partial Class FrmReporteEmpleado
         Me.CmbCampo.Size = New System.Drawing.Size(226, 24)
         Me.CmbCampo.TabIndex = 4
         '
-        'DataGridView1
+        'GroupBox2
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(17, 21)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(753, 315)
-        Me.DataGridView1.TabIndex = 0
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.DgvRegistros)
+        Me.GroupBox2.Controls.Add(Me.DtpFecha1)
+        Me.GroupBox2.Controls.Add(Me.TxtRango2)
+        Me.GroupBox2.Controls.Add(Me.DtpFecha2)
+        Me.GroupBox2.Controls.Add(Me.TxtRango1)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 123)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(776, 342)
+        Me.GroupBox2.TabIndex = 4
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Registros Encontrados"
+        '
+        'DgvRegistros
+        '
+        Me.DgvRegistros.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvRegistros.Location = New System.Drawing.Point(17, 21)
+        Me.DgvRegistros.Name = "DgvRegistros"
+        Me.DgvRegistros.RowHeadersWidth = 51
+        Me.DgvRegistros.RowTemplate.Height = 24
+        Me.DgvRegistros.Size = New System.Drawing.Size(753, 315)
+        Me.DgvRegistros.TabIndex = 0
         '
         'DtpFecha1
         '
@@ -104,6 +113,13 @@ Partial Class FrmReporteEmpleado
         Me.DtpFecha1.Name = "DtpFecha1"
         Me.DtpFecha1.Size = New System.Drawing.Size(200, 22)
         Me.DtpFecha1.TabIndex = 1
+        '
+        'TxtRango2
+        '
+        Me.TxtRango2.Location = New System.Drawing.Point(382, 45)
+        Me.TxtRango2.Name = "TxtRango2"
+        Me.TxtRango2.Size = New System.Drawing.Size(100, 22)
+        Me.TxtRango2.TabIndex = 4
         '
         'DtpFecha2
         '
@@ -119,18 +135,31 @@ Partial Class FrmReporteEmpleado
         Me.TxtRango1.Size = New System.Drawing.Size(100, 22)
         Me.TxtRango1.TabIndex = 3
         '
-        'TxtRango2
+        'ToolStrip1
         '
-        Me.TxtRango2.Location = New System.Drawing.Point(382, 45)
-        Me.TxtRango2.Name = "TxtRango2"
-        Me.TxtRango2.Size = New System.Drawing.Size(100, 22)
-        Me.TxtRango2.TabIndex = 4
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(800, 27)
+        Me.ToolStrip1.TabIndex = 5
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = Global.Reportes.My.Resources.Resources.impresora
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(29, 28)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
         '
         'FrmReporteEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 479)
+        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmReporteEmpleado"
@@ -139,19 +168,24 @@ Partial Class FrmReporteEmpleado
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvRegistros, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents CmbCampo As ComboBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtDato As TextBox
     Friend WithEvents BtnMostrar As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvRegistros As DataGridView
     Friend WithEvents DtpFecha1 As DateTimePicker
     Friend WithEvents TxtRango2 As TextBox
     Friend WithEvents DtpFecha2 As DateTimePicker
     Friend WithEvents TxtRango1 As TextBox
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

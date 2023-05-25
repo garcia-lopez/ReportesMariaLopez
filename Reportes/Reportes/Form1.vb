@@ -33,7 +33,7 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub BtnImprimirCargos_Click_1(sender As Object, e As EventArgs) Handles BtnImprimirCargos.Click
+    Private Sub BtnImprimirCargos_Click_1(sender As Object, e As EventArgs)
         Try
             Dim tsql As String = "SELECT * FROM jobs"
             Dim conex As New SqlConnection(My.Settings.strConn)
@@ -46,7 +46,7 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub BtnReportesEmpleados_Click(sender As Object, e As EventArgs) Handles BtnReportesEmpleados.Click
+    Private Sub BtnReportesEmpleados_Click(sender As Object, e As EventArgs)
         Try
             Dim tsql As String = "SELECT jobs.job_title, employees.first_name, employees.last_name, employees.email, employees.phone_number, employees.hire_date, employees.salary FROM employees INNER JOIN jobs ON employees.job_id = jobs.job_id"
             Dim conex As New SqlConnection(My.Settings.strConn)
@@ -59,4 +59,39 @@ Public Class Form1
         End Try
     End Sub
 
+    Private Sub BtnSegundaGuia_Click(sender As Object, e As EventArgs)
+        Dim frm As New FrmReporteEmpleado
+        frm.Show()
+    End Sub
+
+    Private Sub ReporteCargosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteCargosToolStripMenuItem.Click
+        Try
+            Dim tsql As String = "SELECT * FROM jobs"
+            Dim conex As New SqlConnection(My.Settings.strConn)
+            Dim da As New SqlDataAdapter(tsql, conex)
+            Dim t As New DataTable
+            da.Fill(t)
+            verReporte(t, "dsRegistros", "diseñosRpt\rptCargo.rdlc")
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
+        End Try
+    End Sub
+
+    Private Sub ReporteEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteEmpleadosToolStripMenuItem.Click
+        Try
+            Dim tsql As String = "SELECT jobs.job_title, employees.first_name, employees.last_name, employees.email, employees.phone_number, employees.hire_date, employees.salary FROM employees INNER JOIN jobs ON employees.job_id = jobs.job_id"
+            Dim conex As New SqlConnection(My.Settings.strConn)
+            Dim da As New SqlDataAdapter(tsql, conex)
+            Dim t As New DataTable
+            da.Fill(t)
+            verReporteDos(t, "DsReporte", "Reportes\RptEmpleadoTrabajo.rdlc")
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
+        End Try
+    End Sub
+
+    Private Sub FormularioEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormularioEmpleadosToolStripMenuItem.Click
+        Dim frm As New FrmReporteEmpleado
+        frm.Show()
+    End Sub
 End Class
