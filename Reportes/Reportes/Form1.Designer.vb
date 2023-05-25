@@ -23,23 +23,37 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.BtnImprimirCargos = New System.Windows.Forms.Button()
+        Me.BtnReportesEmpleados = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnImprimirCargos
         '
-        Me.BtnImprimirCargos.Location = New System.Drawing.Point(306, 12)
+        Me.BtnImprimirCargos.Location = New System.Drawing.Point(408, 15)
+        Me.BtnImprimirCargos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnImprimirCargos.Name = "BtnImprimirCargos"
-        Me.BtnImprimirCargos.Size = New System.Drawing.Size(156, 23)
+        Me.BtnImprimirCargos.Size = New System.Drawing.Size(208, 28)
         Me.BtnImprimirCargos.TabIndex = 0
         Me.BtnImprimirCargos.Text = "Mostrar reportes"
         Me.BtnImprimirCargos.UseVisualStyleBackColor = True
         '
+        'BtnReportesEmpleados
+        '
+        Me.BtnReportesEmpleados.Location = New System.Drawing.Point(408, 64)
+        Me.BtnReportesEmpleados.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnReportesEmpleados.Name = "BtnReportesEmpleados"
+        Me.BtnReportesEmpleados.Size = New System.Drawing.Size(208, 28)
+        Me.BtnReportesEmpleados.TabIndex = 1
+        Me.BtnReportesEmpleados.Text = "Mostrar reportes de empleados"
+        Me.BtnReportesEmpleados.UseVisualStyleBackColor = True
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.Controls.Add(Me.BtnReportesEmpleados)
         Me.Controls.Add(Me.BtnImprimirCargos)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
         Me.Text = "Reporte de Empleado por Profesión"
         Me.ResumeLayout(False)
@@ -47,4 +61,5 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents BtnImprimirCargos As Button
+    Friend WithEvents BtnReportesEmpleados As Button
 End Class

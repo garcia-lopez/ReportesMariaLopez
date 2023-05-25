@@ -145,3 +145,5 @@ C:\Users\Pala\Desktop\ReportesMariaLopez\ReportesMariaLopez\Reportes\Reportes\ob
 C:\Users\Pala\Desktop\ReportesMariaLopez\ReportesMariaLopez\Reportes\Reportes\obj\Debug\Reportes.xml
 C:\Users\Pala\Desktop\ReportesMariaLopez\ReportesMariaLopez\Reportes\Reportes\obj\Debug\Reportes.pdb
 C:\Users\Pala\Desktop\ReportesMariaLopez\ReportesMariaLopez\Reportes\Reportes\obj\Debug\Reportes.FrmVistaPrevia.resources
+C:\Users\Pala\Desktop\ReportesMariaLopez\ReportesMariaLopez\Reportes\Reportes\obj\Debug\Reportes.FrmReporteEmpleado.resources
+C:\Users\Pala\Desktop\ReportesMariaLopez\ReportesMariaLopez\Reportes\Reportes\obj\Debug\Reportes.FrmVistaPreviaEmpleados.resources
