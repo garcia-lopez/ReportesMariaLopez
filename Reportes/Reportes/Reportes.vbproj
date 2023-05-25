@@ -186,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\impresora.png" />
+    <None Include="Resources\lupa.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

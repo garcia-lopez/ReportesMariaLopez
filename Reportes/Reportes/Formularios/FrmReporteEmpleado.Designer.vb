@@ -47,27 +47,29 @@ Partial Class FrmReporteEmpleado
         Me.GroupBox1.Controls.Add(Me.BtnMostrar)
         Me.GroupBox1.Controls.Add(Me.TxtDato)
         Me.GroupBox1.Controls.Add(Me.CmbCampo)
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 39)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(776, 78)
+        Me.GroupBox1.Size = New System.Drawing.Size(989, 78)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione por que campo desea buscar"
         '
         'BtnMostrar
         '
-        Me.BtnMostrar.Location = New System.Drawing.Point(695, 35)
+        Me.BtnMostrar.Image = Global.Reportes.My.Resources.Resources.lupa
+        Me.BtnMostrar.Location = New System.Drawing.Point(910, 15)
         Me.BtnMostrar.Name = "BtnMostrar"
-        Me.BtnMostrar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnMostrar.Size = New System.Drawing.Size(73, 57)
         Me.BtnMostrar.TabIndex = 2
-        Me.BtnMostrar.Text = "Mostrar"
+        Me.BtnMostrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnMostrar.UseVisualStyleBackColor = True
         '
         'TxtDato
         '
         Me.TxtDato.Location = New System.Drawing.Point(264, 35)
         Me.TxtDato.Name = "TxtDato"
-        Me.TxtDato.Size = New System.Drawing.Size(425, 22)
+        Me.TxtDato.Size = New System.Drawing.Size(629, 22)
         Me.TxtDato.TabIndex = 3
         '
         'CmbCampo
@@ -88,9 +90,10 @@ Partial Class FrmReporteEmpleado
         Me.GroupBox2.Controls.Add(Me.TxtRango2)
         Me.GroupBox2.Controls.Add(Me.DtpFecha2)
         Me.GroupBox2.Controls.Add(Me.TxtRango1)
+        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 123)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(776, 342)
+        Me.GroupBox2.Size = New System.Drawing.Size(989, 494)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Registros Encontrados"
@@ -104,7 +107,7 @@ Partial Class FrmReporteEmpleado
         Me.DgvRegistros.Name = "DgvRegistros"
         Me.DgvRegistros.RowHeadersWidth = 51
         Me.DgvRegistros.RowTemplate.Height = 24
-        Me.DgvRegistros.Size = New System.Drawing.Size(753, 315)
+        Me.DgvRegistros.Size = New System.Drawing.Size(966, 467)
         Me.DgvRegistros.TabIndex = 0
         '
         'DtpFecha1
@@ -141,7 +144,7 @@ Partial Class FrmReporteEmpleado
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(800, 27)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1013, 27)
         Me.ToolStrip1.TabIndex = 5
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -151,14 +154,14 @@ Partial Class FrmReporteEmpleado
         Me.ToolStripButton1.Image = Global.Reportes.My.Resources.Resources.impresora
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(29, 28)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(29, 24)
         Me.ToolStripButton1.Text = "ToolStripButton1"
         '
         'FrmReporteEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 479)
+        Me.ClientSize = New System.Drawing.Size(1013, 629)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
