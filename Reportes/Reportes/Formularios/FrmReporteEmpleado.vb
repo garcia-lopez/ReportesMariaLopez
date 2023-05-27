@@ -1,4 +1,5 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿Imports System.Data.SqlTypes
+Imports Microsoft.Reporting.WinForms
 Public Class FrmReporteEmpleado
 
     Dim tblEmp As New BdHRDataSet.RptJobEmployeesDataTable
@@ -15,28 +16,32 @@ Public Class FrmReporteEmpleado
 
     Dim fila As DataRow
     Private Function CrearTabla(query) As DataTable
-        Dim tbl As DataTable = New DataTable("tblEmp")
+        Try
+            Dim tbl As DataTable = New DataTable("tblEmp")
 
-        tbl.Columns.Add("job_title")
-        tbl.Columns.Add("first_name")
-        tbl.Columns.Add("last_name")
-        tbl.Columns.Add("email")
-        tbl.Columns.Add("phone_number")
-        tbl.Columns.Add("hire_date")
-        tbl.Columns.Add("salary")
+            tbl.Columns.Add("job_title")
+            tbl.Columns.Add("first_name")
+            tbl.Columns.Add("last_name")
+            tbl.Columns.Add("email")
+            tbl.Columns.Add("phone_number")
+            tbl.Columns.Add("hire_date")
+            tbl.Columns.Add("salary")
 
-        For Each emp In query
-            fila = tbl.NewRow
-            fila("job_title") = emp.job_title
-            fila("first_name") = emp.first_name
-            fila("last_name") = emp.last_name
-            fila("email") = emp.email
-            fila("phone_number") = emp.phone_number
-            fila("hire_date") = emp.hire_date
-            fila("salary") = emp.salary
-            tbl.Rows.Add(fila)
-        Next
-        Return tbl
+            For Each emp In query
+                fila = tbl.NewRow
+                fila("job_title") = emp.job_title
+                fila("first_name") = emp.first_name
+                fila("last_name") = emp.last_name
+                fila("email") = emp.email
+                fila("phone_number") = emp.phone_number
+                fila("hire_date") = emp.hire_date
+                fila("salary") = emp.salary
+                tbl.Rows.Add(fila)
+            Next
+            Return tbl
+        Catch ex As Exception
+            MsgBox("Error" & ex.Message, MsgBoxStyle.Critical, "Reporte de empleados")
+        End Try
     End Function
 
     Private Sub RealizarBusqueda()
@@ -96,5 +101,25 @@ Public Class FrmReporteEmpleado
         verReporte(tbl, "DsReporte", "Reportes\RptEmpleadoTrabajo.rdlc")
     End Sub
 
+    Private Sub TxtDato_TextChanged(sender As Object, e As EventArgs) Handles TxtDato.TextChanged
+        If (TxtDato.Text = " ") Then
+            LlenarGrid()
+        End If
+    End Sub
 
+    Private Sub TxtDato_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtDato.KeyPress
+        Try
+            If (e.KeyChar() = Chr(Keys.Enter)) Then
+                RealizarBusqueda()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar el reporte")
+        End Try
+    End Sub
+
+    Private Sub CmbCampo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbCampo.SelectedIndexChanged
+        TxtDato.Clear()
+        TxtDato.Focus()
+        LlenarGrid()
+    End Sub
 End Class
